@@ -87,8 +87,8 @@ export default function CountdownPage() {
       icon: "📦",
       title: { es: "Catálogos Online", en: "Online Catalogs" },
       description: {
-        es: "Negocios mostrando catálogos en línea para atraer más clientes.",
-        en: "Businesses showcasing catalogs online to attract more customers.",
+        es: "Catalogos en línea para atraer más clientes y recibir ordenes online.",
+        en: "Online catalogs to attract more customers and receive orders online.",
       },
     },
     {
