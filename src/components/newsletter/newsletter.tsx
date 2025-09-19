@@ -8,12 +8,14 @@ import { toast, Toaster } from "@pheralb/toast";
 
 export function SubscribeNewsletter({
     ctaButton , emailPlaceholder, successMessage, errorMessage, loadingAction
+    , setIsSubscribed
 } : {
     ctaButton: string
     emailPlaceholder: string
     successMessage: string
     errorMessage: string
     loadingAction: string
+    setIsSubscribed: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -34,6 +36,7 @@ export function SubscribeNewsletter({
         toast.success({
           text: successMessage,
         })
+        setIsSubscribed(true)
       } else {
         toast.error({
           text: errorMessage,

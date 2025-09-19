@@ -3,14 +3,11 @@
 import type React from "react"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import Link from "next/link"
 import { SubscribeNewsletter } from "@/components/newsletter/newsletter"
-import { error } from "console"
 
 interface TimeLeft {
   days: number
@@ -26,7 +23,6 @@ export default function CountdownPage() {
     minutes: 0,
     seconds: 0,
   })
-  const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
   const [mounted, setMounted] = useState(false)
   const [language, setLanguage] = useState<"es" | "en">("es")
@@ -226,7 +222,7 @@ export default function CountdownPage() {
             { label: language === "es" ? "Horas" : "Hours", value: timeLeft.hours },
             { label: language === "es" ? "Minutos" : "Minutes", value: timeLeft.minutes },
             { label: language === "es" ? "Segundos" : "Seconds", value: timeLeft.seconds },
-          ].map((item, index) => (
+          ].map((item) => (
             <div key={item.label} className="bg-card/20 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-border/20">
               <div className="text-3xl md:text-5xl font-bold text-primary mb-2 font-mono">
                 {item.value.toString().padStart(2, "0")}
@@ -240,6 +236,7 @@ export default function CountdownPage() {
         <div className="max-w-md mx-auto space-y-4 animate-fade-in" style={{ animationDelay: "0.8s" }}>
           {!isSubscribed ? (
               <SubscribeNewsletter 
+                setIsSubscribed={setIsSubscribed}
                 ctaButton={content[language].ctaButton}
                 emailPlaceholder={content[language].emailPlaceholder}
                 successMessage={content[language].successMessage}
