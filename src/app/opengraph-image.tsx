@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og"
-
+import Image from "next/image"
 export const runtime = "edge"
 
 export const size = {
@@ -8,7 +8,7 @@ export const size = {
 }
 export const contentType = "image/png"
 
-export default async function Image() {
+export default async function OpengraphImage() {
   const launchDate = new Date("2025-09-27T00:00:00Z").getTime()
   const now = Date.now()
   const diff = launchDate - now
@@ -33,9 +33,14 @@ export default async function Image() {
         }}
       >
         {/* Logo */}
-        <div style={{ fontSize: 48, fontWeight: "bold", marginBottom: 20 }}>
-          Bazxar 🚀
-        </div>
+        <Image
+          src="/primary-full.svg"
+          alt="Bazxar"
+          width={200}
+          height={80}
+          className="h-16 md:h-20 w-auto"
+          priority
+        />
 
         {/* Subtitle */}
         <div style={{ fontSize: 28, marginBottom: 40, color: "#ccc" }}>

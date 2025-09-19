@@ -63,7 +63,7 @@ export function SubscribeNewsletter({
       <Input
         type="email"
         placeholder={emailPlaceholder}
-        className="flex-1 min-w-[200px] px-4 py-2 text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/60 transition"
+        className="flex-1 min-w-[200px] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary/60 transition"
         required
         name="email"
       />
