@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",
+    "@number-flow/react": "^0.5.10",
     "@pheralb/toast": "^1.0.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@upstash/ratelimit": "^2.0.6",
