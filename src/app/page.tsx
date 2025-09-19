@@ -222,7 +222,7 @@ export default function CountdownPage() {
             { label: language === "es" ? "Horas" : "Hours", value: timeLeft.hours },
             { label: language === "es" ? "Minutos" : "Minutes", value: timeLeft.minutes },
             { label: language === "es" ? "Segundos" : "Seconds", value: timeLeft.seconds },
-          ].map((item) => (
+          ].map((item, index) => (
             <div key={item.label} className="bg-card/20 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-border/20">
               <div className="text-3xl md:text-5xl font-bold text-primary mb-2 font-mono">
                 {item.value.toString().padStart(2, "0")}

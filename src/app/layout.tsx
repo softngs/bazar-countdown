@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Crea y administra tiendas online, menús digitales y catálogos de negocios. Optimizado para SEO y gratis los primeros 3 meses.",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Bazxar – Compras Online y Gestión de Tiendas",
