@@ -8,6 +8,7 @@ import { useTheme } from "next-themes"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import Link from "next/link"
 import { SubscribeNewsletter } from "@/components/newsletter/newsletter"
+import { AnimatedCountdown } from "@/components/countdown/AnimatedCountdown"
 
 interface TimeLeft {
   days: number
@@ -27,7 +28,7 @@ export default function CountdownPage() {
   const [mounted, setMounted] = useState(false)
   const [language, setLanguage] = useState<"es" | "en">("es")
 
-  const targetDate = new Date("2025-09-28T00:00:00Z").getTime()
+  const targetDate = new Date("2025-09-29T00:00:00Z").getTime()
 
   const content = {
     es: {
@@ -213,24 +214,13 @@ export default function CountdownPage() {
         </div>
 
         {/* Countdown Timer */}
-        <div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-2xl mx-auto animate-scale-up"
-          style={{ animationDelay: "0.6s" }}
-        >
-          {[
-            { label: language === "es" ? "Días" : "Days", value: timeLeft.days },
-            { label: language === "es" ? "Horas" : "Hours", value: timeLeft.hours },
-            { label: language === "es" ? "Minutos" : "Minutes", value: timeLeft.minutes },
-            { label: language === "es" ? "Segundos" : "Seconds", value: timeLeft.seconds },
-          ].map((item, index) => (
-            <div key={item.label} className="bg-card/20 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-border/20">
-              <div className="text-3xl md:text-5xl font-bold text-primary mb-2 font-mono">
-                {item.value.toString().padStart(2, "0")}
-              </div>
-              <div className="text-sm md:text-base text-muted-foreground uppercase tracking-wider">{item.label}</div>
-            </div>
-          ))}
-        </div>
+        <AnimatedCountdown
+          days={timeLeft.days}
+          hours={timeLeft.hours}
+          minutes={timeLeft.minutes}
+          seconds={timeLeft.seconds}
+          language={language}
+        />
 
         {/* Email Signup */}
         <div className="max-w-md mx-auto space-y-4 animate-fade-in" style={{ animationDelay: "0.8s" }}>
