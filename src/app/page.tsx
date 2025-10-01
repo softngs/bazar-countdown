@@ -28,7 +28,7 @@ export default function CountdownPage() {
   const [mounted, setMounted] = useState(false)
   const [language, setLanguage] = useState<"es" | "en">("es")
 
-  const targetDate = new Date("2025-10-01T00:00:00Z").getTime()
+  const targetDate = new Date("2025-10-02T00:00:00Z").getTime()
 
   const content = {
     es: {
